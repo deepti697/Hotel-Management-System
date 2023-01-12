@@ -1,5 +1,5 @@
 server:
-  port: 9999
+  port: 8090
 
 spring:
   application:
@@ -11,17 +11,23 @@ spring:
         uri: 
             lb://HOTEL-CUSTOMER-SERVICE
         predicates:
-        - Path=/ms1/** 
+        - Path=/hotel/customer/** 
       - id: HOTEL-EMPLOYEE-SERVICE
         uri: 
             lb://HOTEL-EMPLOYEE-SERVICE
         predicates:
-        - Path=/ms2/** 
+        - Path=/hotel/employee/** 
       - id: HOTEL-ROOM-SERVICE
         uri: 
             lb://HOTEL-ROOM-SERVICE
         predicates:
-        - Path=/ms3/**
+        - Path=/hotel/room/**
+      - id: HOTEL-LOGIN-SERVICE
+        uri: 
+            lb://HOTEL-LOGIN-SERVICE
+        predicates:
+        - Path=/hotel/login/**
+     
         
       
         
